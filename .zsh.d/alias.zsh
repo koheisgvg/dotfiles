@@ -1,0 +1,17 @@
+alias updatedb='sudo /usr/libexec/locate.updatedb'
+alias ll='ls -Gltr'
+alias la='ls -Gltra'
+alias cd='pushd'
+alias bd='popd'
+alias down='cd /Users/kohei-sugi/Downloads/'
+alias site='cd /Users/kohei-sugi/Sites/'
+alias reps='cd /Users/kohei-sugi/Sites/ReportShair/'
+alias gst='git status'
+alias ta='tmux a'
+
+alias sshsakura='ssh 219.94.228.51 -l kohei-sugi'
+alias sshharasawa='ssh 03-3893-6004.sakura.ne.jp -l 03-3893-6004'
+alias sshu='ssh koheisg@192.168.56.101'
+alias sshrocket='ssh kohei-sugi@114.179.231.53'
+
+alias real='cat ~/reality'
