@@ -1,3 +1,12 @@
+filetype off
+ 
+set rtp+=~/.vim/vundle.git/
+call vundle#rc()
+
+Bundle 'Shougo/unite.vim.git'
+Bundle 'Shougo/vimfiler.git'
+
+
 set nu
 syntax on
 filetype plugin indent on
