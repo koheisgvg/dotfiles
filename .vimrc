@@ -1,3 +1,12 @@
+filetype off
+ 
+set rtp+=~/.vim/vundle.git/
+call vundle#rc()
+
+Bundle 'Shougo/unite.vim.git'
+Bundle 'Shougo/vimfiler.git'
+
+set nu
 syntax on
 filetype plugin indent on
 
@@ -20,6 +29,8 @@ set dictionary=dictionary/php.dict
 set ambiwidth=double
 set tabstop=4
 colorscheme solarized
+let loaded_matchparen = 1
+autocmd BufNewFile,BufRead *.ctp set filetype=php
 autocmd BufRead,BufNewFile *.erb set filetype=eruby.html
 autocmd BufRead,BufNewFile *.html set filetype=eruby.html
 "----------------------------------------------------
