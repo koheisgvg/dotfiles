@@ -1,7 +1,7 @@
 export PATH=$PATH:/opt/local/bin
 export PATH=$PATH:/usr/local/mysql/bin
 
-ZSHHOME="${HOME}/.zsh"
+ZSHHOME="${HOME}/.zsh.d"
 
 if [ -d $ZSHHOME -a -r $ZSHHOME -a \
      -x $ZSHHOME ]; then
