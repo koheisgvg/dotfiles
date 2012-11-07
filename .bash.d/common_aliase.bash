@@ -26,7 +26,7 @@ else
 fi
 
 
-alias real='cat ~/reality'
+alias real='cat ~/.reality'
 
 #tmux
 alias ta='tmux attach'
