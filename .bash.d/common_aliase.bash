@@ -1,13 +1,16 @@
-
 ## windows cygwin .bashrc
 if [ "$OS" = "Windows_NT" ]; then
+	#directory shortcut
 	alias desk='cd /cygdrive/c/Users/k_sugi/Desktop'
 	alias down='cd /cygdrive/c/Users/k_sugi/Downloads'
 	alias re='cd /cygdrive/c/pleiades/xampp/htdocs/rehouse'
 	alias cs='cd /cygdrive/c/xampp/htdocs/cs/'
 	alias xamp='cd /cygdrive/c/xampp/'
-	alias open='cygstart'
 	alias vi='vim'
+	#file
+	alias ll='ls -ltr --color'
+	alias la='ls -ltra --color'
+	alias open='cygstart'
 else
 	#vim73
 	alias vi='/usr/local/bin/vim'
