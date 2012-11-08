@@ -10,3 +10,4 @@ alias htc="ssh kohei-sugi@ightcwb1m -o 'ProxyCommand ssh igbase1.indexweb.co.jp 
 alias sakura='ssh cross-c.sakura.ne.jp -l cross-c'
 alias rehouse='ssh 182.50.100.56'
 alias ig='ssh igbase1.indexweb.co.jp -l kohei-sugi'
+alias vm='ssh root@192.168.56.101'
