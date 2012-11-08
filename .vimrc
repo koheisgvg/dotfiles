@@ -64,11 +64,3 @@ endfunction
 " Remap the tab key to select action with InsertTabWrapper
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 " }}} Autocompletion using the TAB key
-
-
-if !has('gui_running') && $TMUX !=# ''
-	augroup Tmux
-		autocmd!
-		autocmd VimEnter,VimLeave * silent !tmux set status
-	augroup END
-endif
