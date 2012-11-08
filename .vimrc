@@ -1,3 +1,4 @@
+set nocompatible
 filetype off
  
 set rtp+=~/.vim/vundle.git/
@@ -17,7 +18,6 @@ autocmd BufRead /tmp/crontab.* :set nobackup nowritebackup
 
 
 set background=light
-set nocompatible
 set autoindent
 set shiftwidth=4
 set backup
