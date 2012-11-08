@@ -1,1 +1,3 @@
-.vim/bundle
+.bash.d/ssh.bash
+.vim/bundle/
+.vim/.DS_Store
