@@ -44,7 +44,7 @@ imap <C-f> <Right>
 imap <C-a>  <Home>
 imap <C-e>  <End>
 imap <C-d>  <Del>
-imap <C-k> <ESC>d$i
+imap <expr> <C-k> "\<C-g>u".(col('.') == col('$') ? '<C-o>gJ' : '<C-o>D')
 
 function! InsertTabWrapper()
         let col = col('.') - 1
