@@ -1,3 +1,4 @@
 .bash.d/ssh.bash
+.zsh.d/ssh.zsh
 .vim/bundle/
 .vim/.DS_Store
