@@ -26,14 +26,14 @@ else
 fi
 
 
-alias real='cat ~/reality'
+alias real='cat ~/.reality'
 
 #tmux
 alias ta='tmux attach'
 alias tmux='tmux -u'
 
 #php
-alias phpdate='php -r "echo(date(\"Y-m-d h:i:s\"));"'
+alias phpdate='php -r "echo(date(\"Y-m-d h:i:s\"));echo(\"\n\");"'
 
 #hg
 alias hst='hg status'
@@ -41,3 +41,11 @@ alias hlog='hg slog |head -40'
 
 #git
 alias gst='git status'
+
+# bash_completion
+BASH_COMPLETION=/usr/local/etc/bash_completion
+BASH_COMPLETION_DIR=/usr/local/etc/bash_completion.d
+BASH_COMPLETION_COMPAT_DIR=/usr/local/etc/bash_completion.d
+if [ -f /usr/local/etc/bash_completion ]; then
+    . /usr/local/etc/bash_completion
+fi
