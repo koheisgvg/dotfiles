@@ -12,3 +12,11 @@ if [ -d $ZSHHOME -a -r $ZSHHOME -a \
 fi
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# if mac
+#
+# if centOS
+#
+# if mac
+#
+# if windows
