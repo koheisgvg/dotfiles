@@ -6,6 +6,9 @@ call vundle#rc()
 
 Bundle 'Shougo/unite.vim.git'
 Bundle 'Shougo/vimfiler.git'
+Bundle 'tpope/vim-markdown.git'
+Bundle 'mattn/webapi-vim.git'
+Bundle 'mattn/qiita-vim.git'
 
 set nu
 syntax on
