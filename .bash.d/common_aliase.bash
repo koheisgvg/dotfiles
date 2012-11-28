@@ -27,6 +27,9 @@ fi
 
 alias real='cat ~/.reality'
 
+#grep
+alias grep='grep --color'
+
 #tmux
 alias ta='tmux attach'
 alias tmux='tmux -u'

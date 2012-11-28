@@ -2,7 +2,7 @@
 # User specific aliases and functions
 if [ -d "${HOME}/.bash.d" ] ; then
     for f in "${HOME}"/.bash.d/*.bash ; do
-        [ -x "$f" ] && . "$f" && echo load "$f"
+        [ -x "$f" ] && . "$f"
     done
     unset f
 fi
