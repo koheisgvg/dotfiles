@@ -9,6 +9,8 @@ Bundle 'Shougo/vimfiler.git'
 Bundle 'tpope/vim-markdown.git'
 Bundle 'mattn/webapi-vim.git'
 Bundle 'mattn/qiita-vim.git'
+Bundle 'ndreynolds/vim-cakephp.git'
+Bundle 'thinca/vim-quickrun.git'
 
 set nu
 syntax on
@@ -64,3 +66,15 @@ endfunction
 " Remap the tab key to select action with InsertTabWrapper
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 " }}} Autocompletion using the TAB key
+"
+"
+" ------------------------------------------------
+"  vimfilerの設定
+" ------------------------------------------------
+nnoremap <silent> <Leader>fi :<C-u>VimFilerBufferDir -split -simple -winwidth=35 -no-quit<CR>
+
+
+" 英字キーボードの場合はって記述を入れたい
+" ;でコマンド入力( ;と:を入れ替)
+noremap ; :
+noremap : ;

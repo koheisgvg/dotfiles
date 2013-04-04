@@ -33,9 +33,10 @@ alias grep='grep --color'
 #tmux
 alias ta='tmux attach'
 alias tmux='tmux -u'
+alias tmuxnew='tmux new -s'
 
 #php
-alias phpdate='php -r "echo(date(\"Y-m-d h:i:s\"));echo(\"\n\");"'
+alias phpdate='php -r "echo(date(\"Y-m-d H:i:s\"));echo(\"\n\");"'
 
 #hg
 alias hst='hg status'
@@ -43,6 +44,14 @@ alias hlog='hg slog |head -40'
 
 #git
 alias gst='git status'
+
+#less
+vim_version=`vim --version | head -1 | sed 's/^.*\ \([0-9]\)\.\([0-9]\)\ .*$/\1\2/'`
+alias less='/usr/share/vim/vim${vim_version}/macros/less.sh'
+
+#coding
+alias tl='grep -R "TODO" *'
+alias tla='grep -ER "TODO|todo" *'
 
 # bash_completion
 BASH_COMPLETION=/usr/local/etc/bash_completion
