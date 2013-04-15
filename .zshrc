@@ -1,5 +1,4 @@
-export PATH=$PATH:/opt/local/bin
-export PATH=$PATH:/usr/local/mysql/bin
+export PATH=/usr/local/bin:$PATH
 
 ZSHHOME="${HOME}/.zsh.d"
 
