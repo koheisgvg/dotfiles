@@ -1,4 +1,5 @@
 export PATH=/usr/local/bin:$PATH
+export EDITOR=/usr/bin/vim
 
 ZSHHOME="${HOME}/.zsh.d"
 
