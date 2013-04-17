@@ -1,6 +1,9 @@
 export PATH=/usr/local/bin:$PATH
 export EDITOR=/usr/bin/vim
 
+bindkey -e               # キーバインドをemacsモードに設定
+#bindkey -v              # キーバインドをviモードに設定
+
 ZSHHOME="${HOME}/.zsh.d"
 
 if [ -d $ZSHHOME -a -r $ZSHHOME -a \
