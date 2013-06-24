@@ -1,5 +1,9 @@
-export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/sbin/:/usr/local/bin:$PATH
 export EDITOR=/usr/bin/vim
+
+#for phpenv
+export PATH="$HOME/.phpenv/bin:$PATH"
+eval "$(phpenv init -)"
 
 bindkey -e               # キーバインドをemacsモードに設定
 #bindkey -v              # キーバインドをviモードに設定

@@ -4,13 +4,17 @@ filetype off
 set rtp+=~/.vim/vundle.git/
 call vundle#rc()
 
+Bundle 'Shougo/vimproc.git'
 Bundle 'Shougo/unite.vim.git'
 Bundle 'Shougo/vimfiler.git'
+Bundle 'Shougo/vimshell.git'
 Bundle 'tpope/vim-markdown.git'
 Bundle 'mattn/webapi-vim.git'
 Bundle 'mattn/qiita-vim.git'
 Bundle 'ndreynolds/vim-cakephp.git'
 Bundle 'thinca/vim-quickrun.git'
+Bundle 'Shougo/neocomplcache.vim.git'
+Bundle 'AutoComplPop'
 
 set nu
 syntax on
@@ -78,3 +82,18 @@ nnoremap <silent> <Leader>fi :<C-u>VimFilerBufferDir -split -simple -winwidth=35
 " ;でコマンド入力( ;と:を入れ替)
 noremap ; :
 noremap : ;
+
+
+" 補完周り
+inoremap { {}<LEFT>
+inoremap [ []<LEFT>
+inoremap ( ()<LEFT>
+inoremap " ""<LEFT>
+inoremap ' ''<LEFT>
+vnoremap { "zdi^V{<C-R>z}<ESC>
+vnoremap [ "zdi^V[<C-R>z]<ESC>
+vnoremap ( "zdi^V(<C-R>z)<ESC>
+vnoremap " "zdi^V"<C-R>z^V"<ESC>
+vnoremap ' "zdi'<C-R>z'<ESC>
+inoremap ;; <C-O>$;<CR>
+
