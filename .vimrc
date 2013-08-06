@@ -1,21 +1,5 @@
 set nocompatible
 filetype off
- 
-set rtp+=~/.vim/vundle.git/
-call vundle#rc()
-
-Bundle 'Shougo/vimproc.git'
-Bundle 'Shougo/unite.vim.git'
-Bundle 'Shougo/vimfiler.git'
-Bundle 'Shougo/vimshell.git'
-Bundle 'tpope/vim-markdown.git'
-Bundle 'mattn/webapi-vim.git'
-Bundle 'mattn/qiita-vim.git'
-Bundle 'ndreynolds/vim-cakephp.git'
-Bundle 'thinca/vim-quickrun.git'
-Bundle 'Shougo/neocomplcache.vim.git'
-Bundle 'AutoComplPop'
-
 set nu
 syntax on
 filetype plugin indent on
@@ -26,7 +10,7 @@ filetype plugin indent on
 autocmd BufRead /tmp/crontab.* :set nobackup nowritebackup
 
 
-set background=light
+set background=dark
 set autoindent
 set shiftwidth=4
 set backup
@@ -37,7 +21,6 @@ set backspace=indent,eol,start
 set dictionary=dictionary/php.dict
 set ambiwidth=double
 set tabstop=4
-colorscheme solarized
 let loaded_matchparen = 1
 autocmd BufNewFile,BufRead *.ctp set filetype=php
 autocmd BufRead,BufNewFile *.erb set filetype=eruby.html

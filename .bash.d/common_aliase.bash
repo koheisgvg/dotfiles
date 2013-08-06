@@ -43,7 +43,7 @@ alias hst='hg status'
 alias hlog='hg slog |head -40'
 
 #git
-alias gst='git status'
+alias gst='git status -s -b'
 
 #less
 vim_version=`vim --version | head -1 | sed 's/^.*\ \([0-9]\)\.\([0-9]\)\ .*$/\1\2/'`
