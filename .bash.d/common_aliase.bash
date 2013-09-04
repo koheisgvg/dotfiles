@@ -6,6 +6,7 @@ if [ "$OS" = "Windows_NT" ]; then
 	alias ll='ls -ltr --color'
 	alias la='ls -ltra --color'
 	alias open='cygstart'
+	alias mysql='mysql -h127.0.0.1'
 else
 	#vim73
 	alias vi='/usr/local/bin/vim'
@@ -35,7 +36,7 @@ alias hlog='hg slog |head -40'
 #git
 alias gst='git status -s -b && git stash list'
 alias gb='git branch -a'
-alias glog='git log|head'
+alias glog='git log --graph |head'
 
 #less
 vim_version=`vim --version | head -1 | sed 's/^.*\ \([0-9]\)\.\([0-9]\)\ .*$/\1\2/'`
