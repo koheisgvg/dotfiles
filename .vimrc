@@ -15,6 +15,7 @@ Bundle 'ndreynolds/vim-cakephp.git'
 Bundle 'thinca/vim-quickrun.git'
 Bundle 'Shougo/neocomplcache.vim.git'
 Bundle 'AutoComplPop'
+Bundle 'JavaScript-syntax'
 
 set nu
 syntax on
