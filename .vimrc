@@ -6,8 +6,16 @@ endif
 call neobundle#rc(expand('~/.vim/bundle/'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
+NeoBundle 'git://github.com/tpope/vim-markdown.git'
+NeoBundle 'git://github.com/mattn/webapi-vim.git'
+NeoBundle 'git://github.com/mattn/qiita-vim.git'
+NeoBundle 'git://github.com/ndreynolds/vim-cakephp.git'
+NeoBundle 'git://github.com/thinca/vim-quickrun.git'
+NeoBundle 'git://github.com/AutoComplPop'
 NeoBundle 'git://github.com/Shougo/vimproc'
 NeoBundle 'git://github.com/Shougo/neocomplcache'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'gregsexton/gitv'
 
 filetype plugin indent on
 
@@ -17,6 +25,11 @@ NeoBundleCheck
 "" color
 colorscheme solarized
 set background=light
+
+"" status line
+set laststatus=2
+set statusline=%{fugitive#statusline()}
+set statusline+=\ %<%f\ %m%r%h%w
 
 
 "" syntax
