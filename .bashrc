@@ -7,6 +7,9 @@ if [ -d "${HOME}/.bash.d" ] ; then
     unset f
 fi
 
+# for screen trigger key set Q
+stty -ixon
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc

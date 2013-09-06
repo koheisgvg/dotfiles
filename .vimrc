@@ -9,6 +9,7 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'git://github.com/Shougo/vimproc'
 NeoBundle 'git://github.com/Shougo/neocomplcache'
+NeoBundle 'git://github.com/vim-scripts/AutoComplPop.git'
 
 filetype plugin indent on
 
@@ -18,7 +19,6 @@ NeoBundleCheck
 "" color
 colorscheme solarized
 set background=light
-
 
 "" syntax
 syntax on
@@ -59,6 +59,8 @@ let loaded_matchparen = 1
 autocmd BufNewFile,BufRead *.ctp set filetype=php
 autocmd BufRead,BufNewFile *.erb set filetype=eruby.html
 autocmd BufRead,BufNewFile *.html set filetype=eruby.html
+
+
 
 "----------------------------------------------------
 " 挿入モードでのカーソル移動
