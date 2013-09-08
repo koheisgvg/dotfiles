@@ -16,6 +16,12 @@ NeoBundle 'git://github.com/Shougo/vimproc'
 NeoBundle 'git://github.com/Shougo/neocomplcache'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'gregsexton/gitv'
+NeoBundle 'scrooloose/syntastic'
+
+""for javascript
+NeoBundle 'jelera/vim-javascript-syntax'
+NeoBundle 'vim-scripts/jQuery'
+NeoBundle 'teramako/jscomplete-vim'
 
 filetype plugin indent on
 
