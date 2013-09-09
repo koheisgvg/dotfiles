@@ -10,6 +10,8 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'git://github.com/Shougo/vimproc'
 NeoBundle 'git://github.com/Shougo/neocomplcache'
 NeoBundle 'git://github.com/vim-scripts/AutoComplPop.git'
+NeoBundle 'git://github.com/tpope/vim-fugitive.git'
+NeoBundle 'git://github.com/gregsexton/gitv.git'
 
 filetype plugin indent on
 
@@ -25,6 +27,7 @@ syntax on
 filetype plugin indent on
 
 set nu
+"" 全角で表示が崩れるのを修正
 set ambiwidth=double
 
 " indent
@@ -45,6 +48,9 @@ set noswapfile
 set enc=utf-8
 set fenc=utf-8
 
+"pare ()
+let loaded_matchparen = 1
+
 "----------------------------------------------------
 " when crontab nobackup
 "----------------------------------------------------
@@ -55,7 +61,6 @@ set backspace=indent,eol,start
 set dictionary=dictionary/php.dict
 
 
-let loaded_matchparen = 1
 autocmd BufNewFile,BufRead *.ctp set filetype=php
 autocmd BufRead,BufNewFile *.erb set filetype=eruby.html
 autocmd BufRead,BufNewFile *.html set filetype=eruby.html
