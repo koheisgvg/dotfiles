@@ -62,6 +62,10 @@ set noswapfile
 set enc=utf-8
 set fenc=utf-8
 
+" screen bell
+set t_vb=
+set novisualbell"
+
 "----------------------------------------------------
 " when crontab nobackup
 "----------------------------------------------------
