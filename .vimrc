@@ -15,6 +15,7 @@ NeoBundle 'git://github.com/AutoComplPop'
 NeoBundle 'git://github.com/Shougo/vimproc'
 NeoBundle 'git://github.com/Shougo/neocomplcache'
 NeoBundle 'scrooloose/syntastic'
+NeoBundle 'PDV--phpDocumentor-for-Vim'
 
 ""for javascript
 NeoBundle 'jelera/vim-javascript-syntax'
@@ -146,3 +147,9 @@ inoremap ;; <C-O>$;<CR>
 "  vimfilerの設定
 " ------------------------------------------------
 nnoremap <silent> <Leader>fi :<C-u>VimFilerBufferDir -split -simple -winwidth=35 -no-quit<CR>
+
+"" setting for php documenter
+source ~/.vim/php-doc.vim 
+inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i 
+nnoremap <C-P> :call PhpDocSingle()<CR> 
+vnoremap <C-P> :call PhpDocRange()<CR> 
