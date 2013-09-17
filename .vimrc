@@ -14,8 +14,6 @@ NeoBundle 'git://github.com/thinca/vim-quickrun.git'
 NeoBundle 'git://github.com/AutoComplPop'
 NeoBundle 'git://github.com/Shougo/vimproc'
 NeoBundle 'git://github.com/Shougo/neocomplcache'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'gregsexton/gitv'
 NeoBundle 'scrooloose/syntastic'
 
 ""for javascript
@@ -23,9 +21,15 @@ NeoBundle 'jelera/vim-javascript-syntax'
 NeoBundle 'vim-scripts/jQuery'
 NeoBundle 'teramako/jscomplete-vim'
 
+NeoBundle 'git://github.com/tpope/vim-fugitive.git'
+NeoBundle 'git://github.com/gregsexton/gitv.git'
+
 filetype plugin indent on
 
 NeoBundleCheck
+
+"" OS enviroment set
+let OSTYPE = system('uname')
 
 " View
 "" color
@@ -37,15 +41,19 @@ set laststatus=2
 set statusline=%{fugitive#statusline()}
 set statusline+=\ %<%f\ %m%r%h%w
 
-
 "" syntax
 syntax on
 filetype plugin indent on
 
 set nu
+"" 全角で表示が崩れるのを修正
 set ambiwidth=double
 
 " indent
+if OSTYPE == "CYGWIN_NT-6.1\n"
+    set expandtab
+else
+endif
 set tabstop=4
 set autoindent
 set shiftwidth=4
@@ -66,6 +74,9 @@ set fenc=utf-8
 set t_vb=
 set novisualbell"
 
+"pare ()
+let loaded_matchparen = 1
+
 "----------------------------------------------------
 " when crontab nobackup
 "----------------------------------------------------
@@ -76,10 +87,11 @@ set backspace=indent,eol,start
 set dictionary=dictionary/php.dict
 
 
-let loaded_matchparen = 1
 autocmd BufNewFile,BufRead *.ctp set filetype=php
 autocmd BufRead,BufNewFile *.erb set filetype=eruby.html
 autocmd BufRead,BufNewFile *.html set filetype=eruby.html
+
+
 
 "----------------------------------------------------
 " 挿入モードでのカーソル移動
@@ -134,7 +146,3 @@ inoremap ;; <C-O>$;<CR>
 "  vimfilerの設定
 " ------------------------------------------------
 nnoremap <silent> <Leader>fi :<C-u>VimFilerBufferDir -split -simple -winwidth=35 -no-quit<CR>
-
-
-
-

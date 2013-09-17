@@ -1,11 +1,24 @@
-escape ^t^t
+escape ^Qq
 hardstatus alwayslastline "%w"
 startup_message off
 
-
+# keybind
 bind j focus down
 bind k focus up
 bind t focus top
 bind b focus bottom
 
 bind \" split
+
+# window number
+screen 1
+bind c eval 'screen 1'
+
+# alternate screen on, for vi,less,view
+altscreen on
+
+# for mouse scrole
+termcapinfo xterm* ti@:te@
+
+# for 256color
+term xterm-256color

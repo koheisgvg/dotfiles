@@ -1,30 +1,28 @@
 ## windows cygwin .bashrc
 if [ "$OS" = "Windows_NT" ]; then
-	#directory shortcut
-	alias vi='vim'
 	#file
 	alias ll='ls -ltr --color'
 	alias la='ls -ltra --color'
 	alias open='cygstart'
 	alias mysql='mysql -h127.0.0.1'
+	alias ta='screen'
+	alias vi='vim'
 else
-	#vim73
-	alias vi='/usr/local/bin/vim'
 	#file
 	alias rm='rm -i'
 	alias cp='cp -i'
 	alias mv='mv -i'
 	alias ll='ls -ltr'
 	alias la='ls -ltra'
+	#tmux
+	alias ta='tmux attach'
+	alias tmux='tmux -u'
+	alias tmuxnew='tmux new -s'
 fi
 
 #grep
 alias grep='grep --color'
 
-#tmux
-alias ta='tmux attach'
-alias tmux='tmux -u'
-alias tmuxnew='tmux new -s'
 
 #php
 alias phpdate='php -r "echo(date(\"Y-m-d H:i:s\"));echo(\"\n\");"'

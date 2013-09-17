@@ -7,6 +7,11 @@ if [ -d "${HOME}/.bash.d" ] ; then
     unset f
 fi
 
+# for screen trigger key set Q
+stty -ixon
+# c-s無効化
+stty stop undef
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
