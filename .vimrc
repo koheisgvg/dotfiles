@@ -17,10 +17,18 @@ filetype plugin indent on
 
 NeoBundleCheck
 
+"" OS enviroment set
+let OSTYPE = system('uname')
+
 " View
 "" color
 colorscheme solarized
 set background=light
+
+"" status line
+set laststatus=2
+set statusline=%{fugitive#statusline()}
+set statusline+=\ %<%f\ %m%r%h%w
 
 "" syntax
 syntax on
@@ -31,9 +39,12 @@ set nu
 set ambiwidth=double
 
 " indent
+if OSTYPE == "CYGWIN_NT-6.1\n"
+    set expandtab
+else
+endif
 set tabstop=4
 set autoindent
-set expandtab
 set shiftwidth=4
 
 set list
@@ -120,7 +131,3 @@ inoremap ;; <C-O>$;<CR>
 "  vimfilerの設定
 " ------------------------------------------------
 nnoremap <silent> <Leader>fi :<C-u>VimFilerBufferDir -split -simple -winwidth=35 -no-quit<CR>
-
-
-
-
