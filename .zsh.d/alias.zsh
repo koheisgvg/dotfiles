@@ -16,7 +16,6 @@ alias real='cat ~/.reality'
 
 #git
 alias gst='git status -s -b && git stash list'
-alias gb='git branch -a'
 
 #tmux
 alias ta='tmux a'
