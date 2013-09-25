@@ -53,3 +53,8 @@ if [ -d $ZSHHOME -a -r $ZSHHOME -a \
             [ \( -f $i -o -h $i \) -a -r $i ] && . $i
     done
 fi
+
+# for screen trigger key set Q
+stty -ixon
+# c-s無効化
+stty stop undef
