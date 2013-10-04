@@ -75,6 +75,7 @@ set fenc=utf-8
 set t_vb=
 set novisualbell"
 
+
 "pare ()
 let loaded_matchparen = 1
 
@@ -129,7 +130,7 @@ inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 noremap ; :
 noremap : ;
 
-" complement
+"" complement
 inoremap { {}<LEFT>
 inoremap [ []<LEFT>
 inoremap ( ()<LEFT>
@@ -141,6 +142,9 @@ vnoremap ( "zdi^V(<C-R>z)<ESC>
 vnoremap " "zdi^V"<C-R>z^V"<ESC>
 vnoremap ' "zdi'<C-R>z'<ESC>
 inoremap ;; <C-O>$;<CR>
+
+" command mode complement
+set wildmenu
 
 
 " ------------------------------------------------

@@ -1,5 +1,6 @@
 escape ^Qq
-hardstatus alwayslastline "%w"
+shelltitle "$ |zsh"
+hardstatus alwayslastline "%{.dW}%-w%{.kW}%n %t%{-}%+w %=%{..G} %H %{..w} %Y %m/%d %C%a "
 startup_message off
 
 # keybind
