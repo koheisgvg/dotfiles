@@ -17,6 +17,9 @@ NeoBundle 'git://github.com/Shougo/neocomplcache'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'PDV--phpDocumentor-for-Vim'
 
+""for behat
+NeoBundle 'veloce/vim-behat.git'
+
 ""for javascript
 NeoBundle 'jelera/vim-javascript-syntax'
 NeoBundle 'vim-scripts/jQuery'
@@ -35,7 +38,7 @@ let OSTYPE = system('uname')
 " View
 "" color
 colorscheme solarized
-set background=light
+set background=dark
 
 "" status line
 set laststatus=2
