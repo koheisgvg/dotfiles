@@ -103,14 +103,14 @@ autocmd BufRead,BufNewFile *.html set filetype=eruby.html
 "----------------------------------------------------
 
 " keybind
-imap <C-n> <Down>
-imap <C-p> <Up>
-imap <C-b> <Left>
-imap <C-f> <Right>
-imap <C-a>  <Home>
-imap <C-e>  <End>
-imap <C-d>  <Del>
-imap <expr> <C-k> "\<C-g>u".(col('.') == col('$') ? '<C-o>gJ' : '<C-o>D')
+map! <C-n> <Down>
+map! <C-p> <Up>
+map! <C-b> <Left>
+map! <C-f> <Right>
+map! <C-a>  <Home>
+map! <C-e>  <End>
+map! <C-d>  <Del>
+map! <expr> <C-k> "\<C-g>u".(col('.') == col('$') ? '<C-o>gJ' : '<C-o>D')
 
 function! InsertTabWrapper()
     let col = col('.') - 1
@@ -157,6 +157,6 @@ nnoremap <silent> <Leader>fi :<C-u>VimFilerBufferDir -split -simple -winwidth=35
 
 "" setting for php documenter
 source ~/.vim/php-doc.vim 
-inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i 
+""inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i 
 nnoremap <C-P> :call PhpDocSingle()<CR> 
 vnoremap <C-P> :call PhpDocRange()<CR> 
