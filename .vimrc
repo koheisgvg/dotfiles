@@ -36,6 +36,10 @@ NeoBundleCheck
 let OSTYPE = system('uname')
 
 " View
+"" cursorline
+set cursorline
+set cursorcolumn
+
 "" color
 colorscheme solarized
 set background=dark
