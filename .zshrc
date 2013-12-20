@@ -45,7 +45,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-
+export LANG=ja_JP.UTF-8
 export GREP_OPTIONS='--color=auto -n' # TODO pull request oh-my-zsh
 
 ZSHHOME="${HOME}/.zsh.d"
