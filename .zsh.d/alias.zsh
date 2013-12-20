@@ -1,5 +1,8 @@
 alias real='cat ~/.reality'
 
+#vi
+alias vi='vim'
+
 #git
 alias gst='git status -s -b'
 
