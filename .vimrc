@@ -36,13 +36,35 @@ NeoBundleCheck
 let OSTYPE = system('uname')
 
 " View
-"" cursorline
-set cursorline
-set cursorcolumn
-
 "" color
 colorscheme solarized
 set background=dark
+
+"" cursorline
+set cursorline
+set cursorcolumn
+highlight clear CursorLine
+highlight CursorLine gui=underline ctermbg=0
+augroup SorarizedColorAu
+    autocmd!
+    autocmd InsertEnter * highlight CursorLine gui=underline ctermbg=18
+    autocmd InsertLeave * highlight CursorLine gui=underline ctermbg=0
+augroup END
+
+" 全角スペースの表示：ハイライト
+highlight ZenkakuSpace
+            \ cterm=underline ctermfg=blue ctermbg=gray
+            \ gui=underline   guifg=blue   guibg=gray
+match ZenkakuSpace /　/
+
+" indent-guides.vim
+if 'dark' == &background
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=gray ctermbg=0
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=236
+else
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=gray ctermbg=0
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=0
+endif
 
 "" status line
 set laststatus=2
