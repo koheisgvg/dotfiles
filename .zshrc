@@ -5,7 +5,7 @@ ZSH=$HOME/dotfiles/oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="kphoen"
+ZSH_THEME="frisk"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -41,6 +41,7 @@ ZSH_THEME="kphoen"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
+plugins=(tmux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -61,3 +62,5 @@ fi
 stty -ixon
 # c-s無効化
 stty stop undef
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
