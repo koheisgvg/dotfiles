@@ -11,7 +11,7 @@ NeoBundle 'git://github.com/mattn/webapi-vim.git'
 NeoBundle 'git://github.com/mattn/qiita-vim.git'
 NeoBundle 'git://github.com/ndreynolds/vim-cakephp.git'
 NeoBundle 'git://github.com/thinca/vim-quickrun.git'
-NeoBundle 'git://github.com/AutoComplPop'
+NeoBundle 'git@github.com:vim-scripts/AutoComplPop.git'
 NeoBundle 'git://github.com/Shougo/vimproc'
 NeoBundle 'git://github.com/Shougo/neocomplcache'
 NeoBundle 'scrooloose/syntastic'
@@ -23,7 +23,7 @@ NeoBundle 'veloce/vim-behat.git'
 ""for javascript
 NeoBundle 'jelera/vim-javascript-syntax'
 NeoBundle 'vim-scripts/jQuery'
-NeoBundle 'teramako/jscomplete-vim'
+NeoBundle 'https://bitbucket.org/teramako/jscomplete-vim.git'
 
 NeoBundle 'git://github.com/tpope/vim-fugitive.git'
 NeoBundle 'git://github.com/gregsexton/gitv.git'
@@ -39,6 +39,32 @@ let OSTYPE = system('uname')
 "" color
 colorscheme solarized
 set background=dark
+
+"" cursorline
+set cursorline
+set cursorcolumn
+highlight clear CursorLine
+highlight CursorLine gui=underline ctermbg=0
+augroup SorarizedColorAu
+    autocmd!
+    autocmd InsertEnter * highlight CursorLine gui=underline ctermbg=18
+    autocmd InsertLeave * highlight CursorLine gui=underline ctermbg=0
+augroup END
+
+" 全角スペースの表示：ハイライト
+highlight ZenkakuSpace
+            \ cterm=underline ctermfg=blue ctermbg=gray
+            \ gui=underline   guifg=blue   guibg=gray
+match ZenkakuSpace /　/
+
+" indent-guides.vim
+if 'dark' == &background
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=gray ctermbg=0
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=236
+else
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=gray ctermbg=0
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=0
+endif
 
 "" status line
 set laststatus=2
@@ -103,14 +129,14 @@ autocmd BufRead,BufNewFile *.html set filetype=eruby.html
 "----------------------------------------------------
 
 " keybind
-imap <C-n> <Down>
-imap <C-p> <Up>
-imap <C-b> <Left>
-imap <C-f> <Right>
-imap <C-a>  <Home>
-imap <C-e>  <End>
-imap <C-d>  <Del>
-imap <expr> <C-k> "\<C-g>u".(col('.') == col('$') ? '<C-o>gJ' : '<C-o>D')
+map! <C-n> <Down>
+map! <C-p> <Up>
+map! <C-b> <Left>
+map! <C-f> <Right>
+map! <C-a>  <Home>
+map! <C-e>  <End>
+map! <C-d>  <Del>
+map! <expr> <C-k> "\<C-g>u".(col('.') == col('$') ? '<C-o>gJ' : '<C-o>D')
 
 function! InsertTabWrapper()
     let col = col('.') - 1
@@ -157,6 +183,6 @@ nnoremap <silent> <Leader>fi :<C-u>VimFilerBufferDir -split -simple -winwidth=35
 
 "" setting for php documenter
 source ~/.vim/php-doc.vim 
-inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i 
+""inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i 
 nnoremap <C-P> :call PhpDocSingle()<CR> 
 vnoremap <C-P> :call PhpDocRange()<CR> 
