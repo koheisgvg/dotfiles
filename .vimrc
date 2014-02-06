@@ -14,16 +14,16 @@ NeoBundle 'git://github.com/thinca/vim-quickrun.git'
 NeoBundle 'git@github.com:vim-scripts/AutoComplPop.git'
 NeoBundle 'git://github.com/Shougo/vimproc'
 NeoBundle 'git://github.com/Shougo/neocomplcache'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'PDV--phpDocumentor-for-Vim'
+NeoBundle 'git://github.com/scrooloose/syntastic'
+NeoBundle 'git@github.com:vim-scripts/PDV--phpDocumentor-for-Vim.git'
 
 ""for behat
-NeoBundle 'veloce/vim-behat.git'
+NeoBundle 'git://github.com/veloce/vim-behat.git'
 
 ""for javascript
-NeoBundle 'jelera/vim-javascript-syntax'
-NeoBundle 'vim-scripts/jQuery'
-NeoBundle 'https://bitbucket.org/teramako/jscomplete-vim.git'
+NeoBundle 'git://github.com/jelera/vim-javascript-syntax.git'
+NeoBundle 'git://github.com/vim-scripts/jQuery'
+NeoBundle 'git@bitbucket.org:teramako/jscomplete-vim.git'
 
 NeoBundle 'git://github.com/tpope/vim-fugitive.git'
 NeoBundle 'git://github.com/gregsexton/gitv.git'
