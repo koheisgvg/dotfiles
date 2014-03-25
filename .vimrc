@@ -23,7 +23,7 @@ NeoBundle 'git://github.com/veloce/vim-behat.git'
 ""for javascript
 NeoBundle 'git://github.com/jelera/vim-javascript-syntax.git'
 NeoBundle 'git://github.com/vim-scripts/jQuery'
-NeoBundle 'git@bitbucket.org:teramako/jscomplete-vim.git'
+NeoBundle 'git@github.com:mattn/jscomplete-vim.git'
 
 NeoBundle 'git://github.com/tpope/vim-fugitive.git'
 NeoBundle 'git://github.com/gregsexton/gitv.git'
