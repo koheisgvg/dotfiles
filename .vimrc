@@ -6,27 +6,27 @@ endif
 call neobundle#rc(expand('~/.vim/bundle/'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
-NeoBundle 'git://github.com/tpope/vim-markdown.git'
-NeoBundle 'git://github.com/mattn/webapi-vim.git'
-NeoBundle 'git://github.com/mattn/qiita-vim.git'
-NeoBundle 'git://github.com/ndreynolds/vim-cakephp.git'
-NeoBundle 'git://github.com/thinca/vim-quickrun.git'
+""NeoBundle 'git://github.com/tpope/vim-markdown.git'
+""NeoBundle 'git://github.com/mattn/webapi-vim.git'
+""NeoBundle 'git://github.com/mattn/qiita-vim.git'
+"NeoBundle 'git://github.com/ndreynolds/vim-cakephp.git'
+""NeoBundle 'git://github.com/thinca/vim-quickrun.git'
 NeoBundle 'git@github.com:vim-scripts/AutoComplPop.git'
-NeoBundle 'git://github.com/Shougo/vimproc'
-NeoBundle 'git://github.com/Shougo/neocomplcache'
-NeoBundle 'git://github.com/scrooloose/syntastic'
+""NeoBundle 'git://github.com/Shougo/vimproc'
+""NeoBundle 'git://github.com/Shougo/neocomplcache'
+""NeoBundle 'git://github.com/scrooloose/syntastic'
 NeoBundle 'git@github.com:vim-scripts/PDV--phpDocumentor-for-Vim.git'
 
 ""for behat
-NeoBundle 'git://github.com/veloce/vim-behat.git'
+""NeoBundle 'git://github.com/veloce/vim-behat.git'
 
 ""for javascript
-NeoBundle 'git://github.com/jelera/vim-javascript-syntax.git'
-NeoBundle 'git://github.com/vim-scripts/jQuery'
+""NeoBundle 'git://github.com/jelera/vim-javascript-syntax.git'
+""NeoBundle 'git://github.com/vim-scripts/jQuery'
 NeoBundle 'git@github.com:mattn/jscomplete-vim.git'
 
-NeoBundle 'git://github.com/tpope/vim-fugitive.git'
-NeoBundle 'git://github.com/gregsexton/gitv.git'
+""NeoBundle 'git://github.com/tpope/vim-fugitive.git'
+""NeoBundle 'git://github.com/gregsexton/gitv.git'
 
 filetype plugin indent on
 
@@ -68,8 +68,8 @@ endif
 
 "" status line
 set laststatus=2
-set statusline=%{fugitive#statusline()}
-set statusline+=\ %<%f\ %m%r%h%w
+"set statusline=%{fugitive#statusline()}
+"set statusline+=\ %<%f\ %m%r%h%w
 
 "" syntax
 syntax on
@@ -86,6 +86,7 @@ else
 endif
 set tabstop=4
 set autoindent
+set expandtab
 set shiftwidth=4
 
 set list

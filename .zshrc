@@ -1,11 +1,16 @@
+source $HOME/dotfiles/zsh/antigenrc
+export LANG=ja_JP.UTF-8
+source $HOME/.zsh.d/alias.zsh
+#export GREP_OPTIONS='--color=auto -n' # TODO its depedency code
+
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/dotfiles/oh-my-zsh
+#ZSH=$HOME/dotfiles/oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="frisk"
+#ZSH_THEME="frisk"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -40,27 +45,21 @@ ZSH_THEME="frisk"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-[[ -x `which git` ]] && plugins=(git)
-[[ -x `which tmux` ]] && plugins=(tmux)
+#[[ -x `which git` ]] && plugins=(git)
+#[[ -x `which tmux` ]] && plugins=(tmux)
 
-source $ZSH/oh-my-zsh.sh
+#source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-export LANG=ja_JP.UTF-8
-export GREP_OPTIONS='--color=auto -n' # TODO pull request oh-my-zsh
-
-ZSHHOME="${HOME}/.zsh.d"
-if [ -d $ZSHHOME -a -r $ZSHHOME -a \
-     -x $ZSHHOME ]; then
-    for i in $ZSHHOME/*; do
-        [[ ${i##*/} = *.zsh ]] &&
-            [ \( -f $i -o -h $i \) -a -r $i ] && . $i
-    done
-fi
+#ZSHHOME="${HOME}/.zsh.d"
+#if [ -d $ZSHHOME -a -r $ZSHHOME -a \
+#     -x $ZSHHOME ]; then
+#    for i in $ZSHHOME/*; do
+#        [[ ${i##*/} = *.zsh ]] &&
+#            [ \( -f $i -o -h $i \) -a -r $i ] && . $i
+#    done
+#fi
 
 # for screen trigger key set Q
-stty -ixon
+#stty -ixon
 # c-s無効化
-stty stop undef
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+#stty stop undef

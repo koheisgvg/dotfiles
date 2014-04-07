@@ -1,0 +1,3 @@
+#!/bin/sh
+DIFF="/usr/bin/vimdiff"
+$DIFF $6 $7
