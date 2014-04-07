@@ -1,5 +1,6 @@
 .bash.d/ssh.bash
 .zsh.d/ssh.zsh
+.zsh.d/secret.zsh
 .vim/.DS_Store
 .vim/bundle/*
 .vim/.netrwhist
