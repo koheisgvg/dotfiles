@@ -4,7 +4,10 @@ alias real='cat ~/.reality'
 alias vi='vim'
 
 #git
-alias gst='git status -s -b'
+#alias gst='git status -s -b'
+alias gst='git status -s'
+
+alias sst='svn status'
 
 #tmux
 alias ta='tmux a'
