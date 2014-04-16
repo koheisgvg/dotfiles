@@ -1,6 +1,10 @@
 source $HOME/dotfiles/zsh/antigenrc
 export LANG=ja_JP.UTF-8
 source $HOME/.zsh.d/alias.zsh
+
+# key-bind TODO plugin
+bindkey '^U' backward-kill-line
+
 #export GREP_OPTIONS='--color=auto -n' # TODO its depedency code
 
 # Path to your oh-my-zsh configuration.
