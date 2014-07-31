@@ -6,27 +6,40 @@ endif
 call neobundle#rc(expand('~/.vim/bundle/'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
-""NeoBundle 'git://github.com/tpope/vim-markdown.git'
-""NeoBundle 'git://github.com/mattn/webapi-vim.git'
-""NeoBundle 'git://github.com/mattn/qiita-vim.git'
-"NeoBundle 'git://github.com/ndreynolds/vim-cakephp.git'
-""NeoBundle 'git://github.com/thinca/vim-quickrun.git'
+
+""undo vim7.3+
+NeoBundle 'git@github.com:sjl/gundo.vim.git'
+
+NeoBundle 'git@github.com:vim-scripts/SearchComplete.git'
+NeoBundle 'git@github.com:tpope/vim-markdown.git'
+NeoBundle 'git@github.com:mattn/webapi-vim.git'
+NeoBundle 'git@github.com:mattn/qiita-vim.git'
+NeoBundle 'git@github.com:ndreynolds/vim-cakephp.git'
+NeoBundle 'git@github.com:thinca/vim-quickrun.git'
 NeoBundle 'git@github.com:vim-scripts/AutoComplPop.git'
-""NeoBundle 'git://github.com/Shougo/vimproc'
-""NeoBundle 'git://github.com/Shougo/neocomplcache'
-""NeoBundle 'git://github.com/scrooloose/syntastic'
+NeoBundle 'git@github.com:Shougo/vimproc'
+NeoBundle 'git@github.com:Shougo/neocomplcache'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'git@github.com:scrooloose/syntastic.git'
 NeoBundle 'git@github.com:vim-scripts/PDV--phpDocumentor-for-Vim.git'
 
 ""for behat
-""NeoBundle 'git://github.com/veloce/vim-behat.git'
+NeoBundle 'git@github.com:veloce/vim-behat.git'
 
 ""for javascript
-""NeoBundle 'git://github.com/jelera/vim-javascript-syntax.git'
-""NeoBundle 'git://github.com/vim-scripts/jQuery'
+NeoBundle 'git@github.com:jelera/vim-javascript-syntax.git'
+NeoBundle 'git@github.com:vim-scripts/jQuery'
 NeoBundle 'git@github.com:mattn/jscomplete-vim.git'
 
-""NeoBundle 'git://github.com/tpope/vim-fugitive.git'
-""NeoBundle 'git://github.com/gregsexton/gitv.git'
+NeoBundle 'git@github.com:tpope/vim-fugitive.git'
+NeoBundle 'git@github.com:gregsexton/gitv.git'
+
+""for CSV
+NeoBundle 'Align'
+
+""for colorscheme
+NeoBundle 'git@github.com:altercation/vim-colors-solarized.git'
 
 filetype plugin indent on
 
@@ -40,11 +53,17 @@ let OSTYPE = system('uname')
 colorscheme solarized
 set background=dark
 
+"" mouse
+set mouse=a
+
+"" command complement
+set wildmode=longest:full,full
+
 "" cursorline
-set cursorline
-set cursorcolumn
-highlight clear CursorLine
-highlight CursorLine gui=underline ctermbg=0
+""set cursorline
+""set cursorcolumn
+""highlight clear CursorLine
+""highlight CursorLine gui=underline ctermbg=0
 augroup SorarizedColorAu
     autocmd!
     autocmd InsertEnter * highlight CursorLine gui=underline ctermbg=18
@@ -67,9 +86,10 @@ else
 endif
 
 "" status line
+set stal=2
 set laststatus=2
-"set statusline=%{fugitive#statusline()}
-"set statusline+=\ %<%f\ %m%r%h%w
+set statusline=%{fugitive#statusline()}
+set statusline+=\ %<%f\ %m%r%h%w
 
 "" syntax
 syntax on
@@ -105,9 +125,9 @@ set fenc=utf-8
 set t_vb=
 set novisualbell"
 
-
-"pare ()
-let loaded_matchparen = 1
+" Search
+set hlsearch
+set ic
 
 "----------------------------------------------------
 " when crontab nobackup
@@ -152,6 +172,27 @@ function! InsertTabWrapper()
     endif
 endfunction
 
+""" neosnipet key-mappings.
+""imap <tab>     <Plug>(neosnippet_expand_or_jump)
+""smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+""xmap <C-k>     <Plug>(neosnippet_expand_target)
+""
+""" SuperTab like snippets behavior.
+""imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+""\ "\<Plug>(neosnippet_expand_or_jump)"
+""\: pumvisible() ? "\<C-n>" : "\<TAB>"
+""smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+""\ "\<Plug>(neosnippet_expand_or_jump)"
+""\: "\<TAB>"
+""
+""" For snippet_complete marker.
+""if has('conceal')
+""  set conceallevel=2 concealcursor=i
+""endif
+""
+""let g:neosnippet#enable_snipmate_compatibility = 1
+""let g:neosnippet#snippets_directory='~/.vim/snip'
+
 " Remap the tab key to select action with InsertTabWrapper
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 " }}} Autocompletion using the TAB key
@@ -176,14 +217,7 @@ inoremap ;; <C-O>$;<CR>
 " command mode complement
 set wildmenu
 
-
-" ------------------------------------------------
-"  vimfilerの設定
-" ------------------------------------------------
-nnoremap <silent> <Leader>fi :<C-u>VimFilerBufferDir -split -simple -winwidth=35 -no-quit<CR>
-
 "" setting for php documenter
 source ~/.vim/php-doc.vim 
-""inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i 
 nnoremap <C-P> :call PhpDocSingle()<CR> 
 vnoremap <C-P> :call PhpDocRange()<CR> 
