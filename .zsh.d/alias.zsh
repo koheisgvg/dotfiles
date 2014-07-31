@@ -4,10 +4,12 @@ alias real='cat ~/.reality'
 alias vi='vim'
 
 #git
-#alias gst='git status -s -b'
-alias gst='git status -s'
+alias gst='git status -s -b'
 
+#svn
 alias sst='svn status'
+alias sb='svn info'
+slog(){svn log "$@"|( read; while true; do read h||break; read; m=""; while read l; do echo "$l" | grep -q '^[-]\+$'&&break; [ -z "$m" ] && m=$l; done; echo "$h % $m" | sed 's#\(.*\) | \(.*\) | \([-0-9 :]\{16\}\).* % \(.*\)#\1 \2 (\3) \4#'; done)}
 
 #tmux
 alias ta='tmux a'

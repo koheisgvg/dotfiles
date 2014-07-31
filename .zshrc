@@ -1,6 +1,8 @@
-source $HOME/dotfiles/zsh/antigenrc
 export LANG=ja_JP.UTF-8
+fpath=(zsh/function ${fpath})
+source $HOME/dotfiles/zsh/antigenrc
 source $HOME/.zsh.d/alias.zsh
+source $HOME/.zsh.d/export.zsh
 
 # key-bind TODO plugin
 bindkey '^U' backward-kill-line
