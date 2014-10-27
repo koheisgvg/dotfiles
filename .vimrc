@@ -35,6 +35,9 @@ NeoBundle 'git@github.com:mattn/jscomplete-vim.git'
 NeoBundle 'git@github.com:tpope/vim-fugitive.git'
 NeoBundle 'git@github.com:gregsexton/gitv.git'
 
+""for vim rooter
+NeoBundle 'git@github.com:airblade/vim-rooter.git'
+
 ""for CSV
 NeoBundle 'Align'
 
@@ -86,10 +89,56 @@ else
 endif
 
 "" status line
-set stal=2
 set laststatus=2
 set statusline=%{fugitive#statusline()}
 set statusline+=\ %<%f\ %m%r%h%w
+
+"" for tab
+" Anywhere SID.
+function! s:SID_PREFIX()
+    return matchstr(expand('<sfile>'), '<SNR>\d\+_\zeSID_PREFIX$')
+endfunction
+
+function! s:my_tabline()
+    let s = ''
+    for i in range(1, tabpagenr('$'))
+        let bufnrs = tabpagebuflist(i)
+        let bufnr = bufnrs[tabpagewinnr(i) - 1]  " first window, first appears
+        let no = i  " display 0-origin tabpagenr.
+        let mod = getbufvar(bufnr, '&modified') ? '!' : ' '
+        let title = fnamemodify(bufname(bufnr), ':t')
+        let title = '[' . title . ']'
+        let s .= '%'.i.'T'
+        let s .= '%#' . (i == tabpagenr() ? 'TabLineSel' : 'TabLine') . '#'
+        let s .= no . ':' . title
+        let s .= mod
+        let s .= '%#TabLineFill# '
+    endfor
+    let s .= '%#TabLineFill#%T%=%#TabLine#'
+    return s
+endfunction
+
+let &tabline = '%!'. s:SID_PREFIX() . 'my_tabline()'
+set showtabline=2 " 常にタブラインを表示
+
+" The prefix key.
+nnoremap    [Tag]   <Nop>
+nmap    t [Tag]
+" Tab jump
+" t1 で1番左のタブ、t2 で1番左から2番目のタブにジャンプ
+for n in range(1, 9)
+    execute 'nnoremap <silent> [Tag]'.n  ':<C-u>tabnext'.n.'<CR>'
+endfor
+
+" tc 新しいタブを一番右に作る
+map <silent> [Tag]c :tablast <bar> tabnew<CR>
+" tx タブを閉じる
+map <silent> [Tag]x :tabclose<CR>
+" tn 次のタブ
+map <silent> [Tag]n :tabnext<CR>
+" tp 前のタブ
+map <silent> [Tag]p :tabprevious<CR>
+
 
 "" syntax
 syntax on
@@ -172,6 +221,7 @@ function! InsertTabWrapper()
     endif
 endfunction
 
+
 """ neosnipet key-mappings.
 ""imap <tab>     <Plug>(neosnippet_expand_or_jump)
 ""smap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -221,3 +271,12 @@ set wildmenu
 source ~/.vim/php-doc.vim 
 nnoremap <C-P> :call PhpDocSingle()<CR> 
 vnoremap <C-P> :call PhpDocRange()<CR> 
+
+"" for syntastic php
+let g:syntastic_mode_map = {
+  \ 'mode': 'active',
+  \ 'active_filetypes': ['php']
+  \}
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_php_checkers = ['phpcs']
+let g:syntastic_php_phpcs_args='--standard=phpcs.xml'

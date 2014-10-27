@@ -1,10 +1,11 @@
 alias real='cat ~/.reality'
+alias phpunit='/web/httpd_pex/personal_contents/k-sugi/test/phpunit'
 
 #vi
 alias vi='vim'
 
 #git
-alias gst='git status -s -b'
+alias gst='git stash list |cat && git status -s -b'
 
 #svn
 alias sst='svn status'
