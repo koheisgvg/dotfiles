@@ -14,7 +14,6 @@ slog(){svn log "$@"|( read; while true; do read h||break; read; m=""; while read
 
 #tmux
 alias ta='tmux a'
-alias tmux='tmux -u'
 
 #php
 alias phpdate='php -r "echo(date(\"Y-m-d H:i:s\"));echo(\"\n\");"'
