@@ -6,3 +6,5 @@
 .vim/bundle/*
 .vim/.netrwhist
 !.vim/bundle/neobundle.vim
+
+.tmux.conf.local
