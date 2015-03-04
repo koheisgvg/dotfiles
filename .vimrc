@@ -232,9 +232,11 @@ set fenc=utf-8
 set t_vb=
 set novisualbell"
 
-" Search
+"" Searching
 set hlsearch
-set ic
+set incsearch
+set ignorecase
+set smartcase
 
 "----------------------------------------------------
 " when crontab nobackup
