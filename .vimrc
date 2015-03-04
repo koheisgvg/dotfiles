@@ -3,7 +3,7 @@ if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 
@@ -104,7 +104,7 @@ NeoBundle 'git@github.com:altercation/vim-colors-solarized.git'
 
 filetype plugin indent on
 
-NeoBundleCheck
+call neobundle#end()
 
 "" OS enviroment set
 let OSTYPE = system('uname')
