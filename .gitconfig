@@ -1,0 +1,23 @@
+[include]
+    path = ~/.gitconfig.local
+[alias]
+    co = checkout
+    br = branch
+    ci = commit
+    delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
+    delete-remote-merged-branches = !git branch -a --merged | grep -v master | grep remotes/origin| sed -e 's% *remotes/origin/%%' | xargs -I% git push origin :%
+[core]
+    editor = vim
+[merge]
+    ff = false
+    tool = myvimdiff
+[diff]
+    external = ~/bin/git_diff_wrapper
+[pager]
+    diff =
+[pull]
+    ff = only
+[gui]
+    encoding = utf-8
+[mergetool "myvimdiff"]
+    cmd = myvimdiff \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
